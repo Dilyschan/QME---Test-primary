@@ -1,25 +1,30 @@
 // =====================================================
 // ENGLISH PLACEMENT TEST - CAMBRIDGE PRIMARY
 // =====================================================
+2. KHAI BÁO MẢNG ẢNH (Dùng cho image1.jpeg đến image10.jpeg)
+const photoFiles = [
+    'image1.jpeg', 'image2.jpeg', 'image3.jpeg', 'image4.jpeg', 'image5.jpeg',
+    'image6.jpeg', 'image7.jpeg', 'image8.jpeg', 'image9.jpeg', 'image10.jpeg'
+];
 
-// ===== EXAM DATA =====
+// 3. DỮ LIỆU BÀI THI (Đã sửa cú pháp chuẩn)
 const examData = {
     part1: {
         title: "Part 1: Vocabulary – Look & Choose",
         description: "Look at the picture and choose the correct word.",
         questions: [
-            { id: 1, image: "http://static.photos/nature/320x240/10", question: "What is this?", options: ["A cat", "A dog", "A bird", "A fish"], correct: 0 },
-            { id: 2, image: "http://static.photos/education/320x240/20", question: "What is this?", options: ["A pen", "A book", "A ruler", "A bag"], correct: 1 },
-            { id: 3, image: "http://static.photos/food/320x240/30", question: "What fruit is this?", options: ["A banana", "A mango", "An apple", "A grape"], correct: 2 },
-            { id: 4, image: "http://static.photos/people/320x240/40", question: "What is the boy doing?", options: ["Running", "Swimming", "Jumping", "Sleeping"], correct: 1 },
-            { id: 5, image: "http://static.photos/red/320x240/50", question: "What color is the car?", options: ["Blue", "Green", "Yellow", "Red"], correct: 3 },
-            { id: 6, image: "http://static.photos/office/320x240/60", question: "What is this?", options: ["A table", "A chair", "A desk", "A sofa"], correct: 1 },
-            { id: 7, image: "http://static.photos/nature/320x240/70", question: "What is the weather like?", options: ["Sunny", "Rainy", "Cloudy", "Snowy"], correct: 0 },
-            { id: 8, image: "http://static.photos/people/320x240/80", question: "What is she wearing?", options: ["A dress", "A shirt", "A coat", "A hat"], correct: 0 },
-            { id: 9, image: "http://static.photos/nature/320x240/90", question: "What animal is this?", options: ["A tiger", "A lion", "An elephant", "A giraffe"], correct: 3 },
-            { id: 10, image: "http://static.photos/education/320x240/100", question: "Where are the children?", options: ["At school", "At home", "At the park", "At the beach"], correct: 0 }
+            { id: 1, image: photoFiles[0], question: "What is this?", options: ["A cat", "A dog", "A bird", "A fish"], correct: 0 },
+            { id: 2, image: photoFiles[1], question: "What is this?", options: ["A pen", "A book", "A ruler", "A bag"], correct: 1 },
+            { id: 3, image: photoFiles[2], question: "What fruit is this?", options: ["A banana", "A mango", "An apple", "A grape"], correct: 2 },
+            { id: 4, image: photoFiles[3], question: "What is the boy doing?", options: ["Running", "Swimming", "Jumping", "Sleeping"], correct: 1 },
+            { id: 5, image: photoFiles[4], question: "What color is the car?", options: ["Blue", "Green", "Yellow", "red"], correct: 3 },
+            { id: 6, image: photoFiles[5], question: "What is this?", options: ["A table", "A chair", "A desk", "A sofa"], correct: 1 },
+            { id: 7, image: photoFiles[6], question: "What is the weather like?", options: ["Sunny", "Rainy", "Cloudy", "Snowy"], correct: 0 },
+            { id: 8, image: photoFiles[7], question: "What is she wearing?", options: ["A dress", "A shirt", "A coat", "A hat"], correct: 0 },
+            { id: 9, image: photoFiles[8], question: "What animal is this?", options: ["A tiger", "A lion", "An elephant", "A giraffe"], correct: 3 },
+            { id: 10, image: photoFiles[9], question: "Where are the children?", options: ["At school", "At home", "At the park", "At the beach"], correct: 0 }
         ]
-    },
+},
     part2: {
         title: "Part 2: Grammar – Choose the Correct Answer",
         description: "Choose the best answer to complete each sentence.",
@@ -98,7 +103,7 @@ const allQuestions = [
 // 3. Paste the doPost function (see comments at bottom of this file)
 // 4. Deploy as Web App (Anyone can access)
 // 5. Copy the URL and paste it below
-const GOOGLE_SHEET_URL = 'AKfycbwJWfqd590KpV71QGztaMK17XAEZ_J3Vqaq8a7g1v_B7Rd4nSXzRriOPXQOkFMKAu4i';
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbzdmc-2sqoU--Eko67N5iysR2XP_CHu2ojVTHl3R6avnQ0_aP0Ks5RYlI07HFvNCs_4/exec';
 
 // ===== PAGE NAVIGATION =====
 function showPage(pageId) {
@@ -647,7 +652,7 @@ function createConfetti() {
 // ===== SEND TO GOOGLE SHEET =====
 function sendToSheet(data) {
     // If URL not configured, save locally
-    if (GOOGLE_SHEET_URL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE') {
+    if (GOOGLE_SHEET_URL === 'https://script.google.com/macros/s/AKfycbzdmc-2sqoU--Eko67N5iysR2XP_CHu2ojVTHl3R6avnQ0_aP0Ks5RYlI07HFvNCs_4/exec') {
         console.log('📊 Data to send to Google Sheet:', data);
         // Save to localStorage as fallback
         const existingData = JSON.parse(localStorage.getItem('examResults') || '[]');
